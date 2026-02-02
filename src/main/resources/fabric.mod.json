@@ -1,0 +1,46 @@
+{
+	"schemaVersion": 1,
+	"id": "dglab-minecraft",
+	"version": "${version}",
+	"name": "DgLabMine",
+	"description": "A Minecraft mod for DgLab Link",
+	"authors": [
+		"@Rainy-day-y"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/dglab-minecraft/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "cn.sweetberry.mcmod.dglab.DgLabMine",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "cn.sweetberry.mcmod.dglab.DgLabMineClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"dglab-minecraft.mixins.json",
+		{
+			"config": "dglab-minecraft.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*",
+		"cloth-config": "${cloth_config_version}"
+	}
+}
