@@ -2,8 +2,8 @@ package cn.sweetberry.mcmod.dglab
 
 import cn.sweetberry.mcmod.dglab.events.damage.DamageEventBus
 import cn.sweetberry.mcmod.dglab.utils.DamageLogger
-import cn.sweetberry.mcmod.dglab.websocket.client.DgLabWebsocketClient
-import cn.sweetberry.mcmod.dglab.websocket.server.DgLabWebsocketServer
+import cn.sweetberry.mcmod.dglab.websocket.client.DgLabSocketClient
+import cn.sweetberry.mcmod.dglab.websocket.server.DgLabSocketService
 import net.fabricmc.api.ClientModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -18,9 +18,10 @@ object DgLabMineClient : ClientModInitializer {
         DamageEventBus.initialize()
         DamageEventBus.register(DamageLogger::logDamageEvent)
 
-        DgLabWebsocketServer.start()
-        DgLabWebsocketClient.start()
+        DgLabSocketService.start()
+        DgLabSocketClient.start()
 
-        DamageEventBus.register(DgLabWebsocketClient::onHurt)
+        DamageEventBus.register(DgLabSocketClient::onHurt)
+        DgLabSocketService.start(11451)
     }
 }

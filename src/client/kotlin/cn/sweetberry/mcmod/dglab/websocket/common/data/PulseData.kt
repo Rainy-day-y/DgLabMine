@@ -1,4 +1,4 @@
-package cn.sweetberry.mcmod.dglab.websocket.common
+package cn.sweetberry.mcmod.dglab.websocket.common.data
 
 import kotlinx.serialization.json.Json
 

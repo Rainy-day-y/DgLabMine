@@ -1,6 +1,6 @@
-package cn.sweetberry.mcmod.dglab.websocket.common.codes_enum
+package cn.sweetberry.mcmod.dglab.websocket.common.codes
 
-enum class FeedbackIndexCode(val code: String, val desc: String) {
+enum class FeedbackIndex(val code: String, val desc: String) {
     A_CIRCLE("feedback-0", "A通道：○"),        // A通道圆
     A_TRIANGLE("feedback-1", "A通道：△"),      // A通道三角
     A_SQUARE("feedback-2", "A通道：□"),        // A通道方块
@@ -13,7 +13,7 @@ enum class FeedbackIndexCode(val code: String, val desc: String) {
     B_HEXAGON("feedback-9", "B通道：⬡");       // B通道六边形
 
     companion object {
-        fun fromCode(code: String): FeedbackIndexCode? =
+        fun fromCode(code: String): FeedbackIndex? =
             entries.firstOrNull { it.code == code }
     }
 }
