@@ -77,19 +77,19 @@ data class Payload(
             settingMode: StrengthSettingMode,
             targetStrength: Short
         ): Payload {
-            val message = "strength-${targetChannel.code}+${settingMode.code}+$targetStrength"
+            val message = "strength-${targetChannel.numberCode}+${settingMode.code}+$targetStrength"
             return command(clientId, targetId, message)
         }
 
         fun sendPulse(
             clientId: UUID, targetId: UUID, channel: Channel, pulseData: PulseData
         ): Payload {
-            val message = "pulse-${channel.code}:${pulseData.toJson()}"
+            val message = "pulse-${channel.letterCode}:${pulseData.toJson()}"
             return command(clientId, targetId, message)
         }
 
         fun clearPulse(clientId: UUID, targetId: UUID, channel: Channel) = command(
-            clientId, targetId, "clear-${channel.code}"
+            clientId, targetId, "clear-${channel.numberCode}"
         )
 
         fun feedback(clientId: UUID, targetId: UUID, feedbackIndex: FeedbackIndex) = command(

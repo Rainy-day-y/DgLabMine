@@ -15,7 +15,6 @@ object DgLabSocketService {
      * 启动服务器（非阻塞）
      *
      * - 多次调用是幂等的
-     * - 永远使用 WebSocketServer.start()
      */
     fun start(port: Int = 17479) {
         synchronized(lock) {

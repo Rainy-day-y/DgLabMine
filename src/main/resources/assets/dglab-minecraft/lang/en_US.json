@@ -1,0 +1,25 @@
+{
+  "text.autoconfig.dglab-minecraft.title": "DgLabMine Config",
+
+  "text.autoconfig.dglab-minecraft.category.server_config": "SocketServer Config",
+  "text.autoconfig.dglab-minecraft.option.serverConfig.serverType": "Server Type",
+  "text.autoconfig.dglab-minecraft.option.serverConfig.serverPort": "Server Port",
+  "text.autoconfig.dglab-minecraft.option.serverConfig.serverAddress": "Server Address",
+
+  "text.autoconfig.dglab-minecraft.category.dg_lab_config": "Rules Config",
+  "text.autoconfig.dglab-minecraft.option.dgLabConfig.enabled": "Enable DG-LAB",
+  "text.autoconfig.dglab-minecraft.option.dgLabConfig.rules": "Rule list",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig": "Rule entry",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.enabled": "Enable Rule",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.name": "Rule name",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.conditions.conditions": "Conditions",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper": "Condition entry",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.type": "Condition type",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange": "Damage Range Setting",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange.min": "Min damage",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange.max": "Max damage",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.isCanceled": "Cancel condition Setting",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.isCanceled.value": "True if canceled",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked": "Shield Blocked Setting",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked.value": "True if blocked"
+}
