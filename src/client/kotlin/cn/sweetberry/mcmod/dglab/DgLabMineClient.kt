@@ -22,6 +22,5 @@ object DgLabMineClient : ClientModInitializer {
         DgLabSocketClient.start()
 
         DamageEventBus.register(DgLabSocketClient::onHurt)
-        DgLabSocketService.start(11451)
     }
 }
