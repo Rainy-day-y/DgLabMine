@@ -15,6 +15,12 @@ class PulseData {
         data.add(hex.lowercase())
     }
 
+    fun addWaveUnits(hexes: List<String>) {
+        for (hex in hexes) {
+            addWaveUnit(hex)
+        }
+    }
+
     fun toJson(): String =
         Json.encodeToString(data)
 }
