@@ -1,7 +1,5 @@
 package cn.sweetberry.mcmod.dglab.config.action
 
-import java.util.UUID
-
 
 sealed class Action {
 

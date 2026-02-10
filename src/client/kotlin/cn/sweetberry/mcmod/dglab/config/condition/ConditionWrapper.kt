@@ -7,7 +7,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry
 class ConditionWrapper: ConfigData {
 
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    var type: DamageCondition.Type = DamageCondition.Type.DAMAGE_RANGE
+    var type: DamageCondition.Type = DAMAGE_RANGE
 
     @ConfigEntry.Gui.CollapsibleObject
     var damageRange: DamageRangeCondition = DamageRangeCondition()
