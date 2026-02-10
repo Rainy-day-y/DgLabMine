@@ -15,6 +15,6 @@ data class SendPulseAction(
     override val type = Type.SEND_PULSE
 
     override fun buildCommand(ctx: ActionContext): OutgoingCommand {
-        return OutgoingCommand.SendPulse(id, channel, pulseID)
+        return OutgoingCommand.SendPulse(channel, pulseID)
     }
 }

@@ -73,6 +73,6 @@ data class SetStrengthAction(
         runtime.updateLastEffect(id, listOf(effect))
         logger.info("this effect: {}", effect)
         logger.info("----END----")
-        return OutgoingCommand.SetStrength(id, channel, mode, strength)
+        return OutgoingCommand.SetStrength(channel, mode, strength)
     }
 }

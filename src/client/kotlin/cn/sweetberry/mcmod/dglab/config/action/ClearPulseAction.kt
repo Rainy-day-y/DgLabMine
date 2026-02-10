@@ -14,6 +14,6 @@ data class ClearPulseAction(
     override val type = Type.CLEAR_PULSE
 
     override fun buildCommand(ctx: ActionContext): OutgoingCommand {
-        return OutgoingCommand.ClearPulse(id, channel)
+        return OutgoingCommand.ClearPulse(channel)
     }
 }
