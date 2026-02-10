@@ -28,12 +28,8 @@ data class SetStrengthAction(
         val jexlContext = ctx.damageData.toJexlContext()
         val limit = when (mode) {
             StrengthSettingMode.SET_TO -> ctx.strengthStatus.limit[channel] ?: 0
-            StrengthSettingMode.DECREASE -> ctx.strengthStatus.strength[channel] ?: 0
-            StrengthSettingMode.INCREASE -> {
-                val limit = ctx.strengthStatus.limit[channel] ?: 0
-                val strength = ctx.strengthStatus.strength[channel] ?: 0
-                limit - strength
-            }
+            StrengthSettingMode.DECREASE -> 200
+            StrengthSettingMode.INCREASE -> 200
         }
         val runtime = ctx.actionRuntimeStore
 
@@ -57,6 +53,7 @@ data class SetStrengthAction(
             logger.warn("A Bad Strength JEXL: ${e.message}")
             0
         }
+        logger.info("strength: $strength")
 
         // 记录本次对设备的影响
         val delta: Short = when (mode) {
