@@ -27,7 +27,7 @@ import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledFuture
 import java.util.concurrent.TimeUnit
 
-object DgLabLocalClient : DgLabClient {
+class DgLabLocalClient : DgLabClient {
     // loggers
     val logger: Logger = LoggerFactory.getLogger(DgLabLocalClient::class.java)
     fun debugLog(msg: String) {
@@ -101,8 +101,10 @@ object DgLabLocalClient : DgLabClient {
     // 每个通道的播放任务
     private val playTasks = ConcurrentHashMap<Channel, ScheduledFuture<*>>()
 
-    // 基础播放间隔（毫秒）
-    private const val BASE_INTERVAL_MS = 100L
+    companion object {
+        // 基础播放间隔（毫秒）
+        private const val BASE_INTERVAL_MS = 100L
+    }
 
     init {
         // 初始化每个通道的队列
@@ -211,7 +213,6 @@ object DgLabLocalClient : DgLabClient {
      * 将消息发送给服务端
      */
     private fun send(message: Payload) {
-        debugLog("Sending message: $message")
         selfEndpoint?.emit(message)
     }
 

@@ -5,7 +5,7 @@ import cn.sweetberry.mcmod.dglab.websocket.client.pulse.reference.PulseReference
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
 import cn.sweetberry.mcmod.vitalsignals.network.damage.DamageData
 
-object DgLabRemoteClient: DgLabClient {
+class DgLabRemoteClient: DgLabClient {
     override val pulseProvider: PulseProvider
         get() = TODO("Not yet implemented")
 
