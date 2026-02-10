@@ -40,5 +40,8 @@
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.mode": "Mode",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.strengthJexl": "Strength(JEXL)",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse": "Clear Pulse Action Setting",
-  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "Channel"
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "Channel",
+  "key.category.dglab-minecraft.key_category":  "DgLabMine",
+  "key.dglab-minecraft.open_config": "Open config",
+  "key.dglab-minecraft.open_qr": "Open QRCode"
 }

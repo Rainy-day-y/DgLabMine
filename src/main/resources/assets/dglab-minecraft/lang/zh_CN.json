@@ -40,5 +40,8 @@
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.mode": "设置模式",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.strengthJexl": "设置值(JEXL)",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse": "清空波形设置",
-  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "目标通道"
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "目标通道",
+  "key.category.dglab-minecraft.key_category":  "DgLabMine按键",
+  "key.dglab-minecraft.open_config": "打开设置",
+  "key.dglab-minecraft.open_qr": "打开连接二维码"
 }
