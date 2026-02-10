@@ -1,0 +1,44 @@
+{
+  "text.autoconfig.dglab-minecraft.title": "DgLabMine设置",
+
+
+  "text.autoconfig.dglab-minecraft.category.server_config": "郊狼服务器设置",
+  "text.autoconfig.dglab-minecraft.option.serverConfig.serverType": "服务器类型",
+  "text.autoconfig.dglab-minecraft.option.serverConfig.serverPort": "服务器端口",
+  "text.autoconfig.dglab-minecraft.option.serverConfig.serverAddress": "服务器地址",
+
+
+  "text.autoconfig.dglab-minecraft.category.dg_lab_config": "规则设置",
+  "text.autoconfig.dglab-minecraft.option.dgLabConfig.enabled": "启用郊狼联动",
+  "text.autoconfig.dglab-minecraft.option.dgLabConfig.rules": "规则列表",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig": "规则：",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.enabled": "启用本规则",
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.name": "规则名称",
+
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.conditions.conditions": "触发条件：",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper": "条件：",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.type": "条件类型",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange": "伤害范围条件设置",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange.min": "最小伤害",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange.max": "最大伤害",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.isCanceled": "伤害取消条件设置",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.isCanceled.value": "取消时执行",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked": "盾牌格挡条件设置",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked.value": "格挡时执行",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.jexl": "自定义JEXL表达式",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.jexl.expression": "返回布尔值的JEXL表达式",
+
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.actions": "执行动作：",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper": "动作：",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.type": "动作类型",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.sendPulse": "发送波形动作设置",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.sendPulse.channel": "目标通道",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.sendPulse.pulseID": "波形ID",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength": "设置强度动作设置",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.id": "动作ID（相同ID以访问上次修改值）",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.channel": "目标通道",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.mode": "设置模式",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.strengthJexl": "设置值(JEXL)",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse": "清空波形设置",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "目标通道"
+}

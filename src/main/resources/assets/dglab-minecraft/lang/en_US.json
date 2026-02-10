@@ -1,10 +1,12 @@
 {
   "text.autoconfig.dglab-minecraft.title": "DgLabMine Config",
 
+
   "text.autoconfig.dglab-minecraft.category.server_config": "SocketServer Config",
   "text.autoconfig.dglab-minecraft.option.serverConfig.serverType": "Server Type",
   "text.autoconfig.dglab-minecraft.option.serverConfig.serverPort": "Server Port",
   "text.autoconfig.dglab-minecraft.option.serverConfig.serverAddress": "Server Address",
+
 
   "text.autoconfig.dglab-minecraft.category.dg_lab_config": "Rules Config",
   "text.autoconfig.dglab-minecraft.option.dgLabConfig.enabled": "Enable DG-LAB",
@@ -12,7 +14,8 @@
   "text.autoconfig.dglab-minecraft.option.RuleConfig": "Rule entry",
   "text.autoconfig.dglab-minecraft.option.RuleConfig.enabled": "Enable Rule",
   "text.autoconfig.dglab-minecraft.option.RuleConfig.name": "Rule name",
-  "text.autoconfig.dglab-minecraft.option.RuleConfig.conditions.conditions": "Conditions",
+
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.conditions.conditions": "When match Conditions:",
   "text.autoconfig.dglab-minecraft.option.ConditionWrapper": "Condition entry",
   "text.autoconfig.dglab-minecraft.option.ConditionWrapper.type": "Condition type",
   "text.autoconfig.dglab-minecraft.option.ConditionWrapper.damageRange": "Damage Range Setting",
@@ -21,5 +24,21 @@
   "text.autoconfig.dglab-minecraft.option.ConditionWrapper.isCanceled": "Cancel condition Setting",
   "text.autoconfig.dglab-minecraft.option.ConditionWrapper.isCanceled.value": "True if canceled",
   "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked": "Shield Blocked Setting",
-  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked.value": "True if blocked"
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.shieldBlocked.value": "True if blocked",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.jexl": "JEXL Setting",
+  "text.autoconfig.dglab-minecraft.option.ConditionWrapper.jexl.expression": "Condition expression\n(JEXL return Boolean)",
+
+  "text.autoconfig.dglab-minecraft.option.RuleConfig.actions": "Actions to do:",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper": "Action entry",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.type": "Action Type",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.sendPulse": "Send Pulse Action Setting",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.sendPulse.channel": "Channel",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.sendPulse.pulseID": "Pulse ID",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength": "Set Strength Action Setting",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.id": "Action ID",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.channel": "Channel",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.mode": "Mode",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.strengthJexl": "Strength(JEXL)",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse": "Clear Pulse Action Setting",
+  "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "Channel"
 }
