@@ -40,6 +40,6 @@ object DgLabMineClient : ClientModInitializer {
             }
         }
 
-        DamageEventBus.register(DamageLogger::logDamageEvent)
+//        DamageEventBus.register(DamageLogger::logDamageEvent)
     }
 }

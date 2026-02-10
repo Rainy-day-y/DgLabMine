@@ -10,8 +10,7 @@ object DamageLogger {
             .getOrThrow(net.minecraft.registry.RegistryKeys.DAMAGE_TYPE)!!
             .getEntry(data.typeId!!)
             .orElseThrow()
-        val longMessage = """
-            |[DgLab] Received Damage Event:
+        val longMessage = """[DgLab] Received Damage Event:
             | - Type: ${type.getKey().orElseThrow().value}
             | - Direct: ${data.isDirect}
             | - Phase: ${data.phase}
@@ -27,7 +26,7 @@ object DamageLogger {
             | - Absorbed: ${data.absorbed}
             | - Other Reduced: ${data.otherReduced}
         """.trimIndent()
-        val shortMessage = "Damage Event: Type ID=${data.typeId}, Damage Amount=${data.damageAmount}"
+        val shortMessage = "Damage Event: Type: ${type.getKey().orElseThrow().value}, Damage Amount=${data.damageAmount}"
 
         DgLabMineClient.debugLog(longMessage)
         client.inGameHud.setOverlayMessage(net.minecraft.text.Text.of(shortMessage), true)
