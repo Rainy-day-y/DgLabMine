@@ -132,6 +132,10 @@ object DgLabClientService {
             }
         }
     }
+
+    fun getClientLink(): String?{
+        return activeClient.get()?.getLink()
+    }
     
     /**
      * 切换到指定类型的客户端

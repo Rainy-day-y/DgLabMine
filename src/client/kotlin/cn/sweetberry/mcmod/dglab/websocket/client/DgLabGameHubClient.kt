@@ -13,6 +13,10 @@ class DgLabGameHubClient: DgLabClient {
         TODO("Not yet implemented")
     }
 
+    override fun getLink(): String? {
+        TODO("Not yet implemented")
+    }
+
     override fun onHurt(data: DamageData) {
         TODO("Not yet implemented")
     }

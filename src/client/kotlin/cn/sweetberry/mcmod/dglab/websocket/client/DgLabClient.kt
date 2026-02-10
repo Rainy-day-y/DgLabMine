@@ -8,6 +8,7 @@ interface DgLabClient: PulsePlayer {
     val pulseProvider: PulseProvider
 
     fun start(): Boolean
+    fun getLink(): String?
     fun onHurt(data: DamageData)
     fun stop()
 }

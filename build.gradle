@@ -57,6 +57,10 @@ dependencies {
 
 	// JEXL for rules
 	implementation("org.apache.commons:commons-jexl3:3.6.1")
+
+	// ZXing QR
+	implementation 'com.google.zxing:core:3.5.4'
+	implementation 'com.google.zxing:javase:3.5.4'
 }
 
 processResources {

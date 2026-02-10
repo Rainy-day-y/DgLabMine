@@ -142,6 +142,14 @@ class DgLabLocalClient : DgLabClient {
         }
     }
 
+    override fun getLink(): String? {
+        val base = "https://www.dungeon-lab.com/app-download.php#DGLAB-SOCKET#"
+        val serverConfig = AutoConfig.getConfigHolder(ModConfig::class.java).getConfig().serverConfig
+        val address = "ws://${serverConfig.serverAddress}:${serverConfig.serverPort}"
+        val id = selfEndpoint?.id?.toString() ?: return null
+        return "$base$address/$id"
+    }
+
     /**
      * 停止客户端
      */
