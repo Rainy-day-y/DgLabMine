@@ -12,8 +12,8 @@ import cn.sweetberry.mcmod.dglab.websocket.common.Payload
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.Error
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.FeedbackIndex
+import cn.sweetberry.mcmod.dglab.websocket.common.data.ChannelStrengthLimit
 import cn.sweetberry.mcmod.dglab.websocket.common.data.PulseData
-import cn.sweetberry.mcmod.dglab.websocket.common.data.StrengthData
 import cn.sweetberry.mcmod.dglab.websocket.server.DgLabSocketService
 import cn.sweetberry.mcmod.vitalsignals.network.damage.DamageData
 import kotlinx.serialization.json.Json
@@ -42,9 +42,9 @@ object DgLabLocalClient : DgLabClient {
 
     private val lock = Any()
 
-    private var strengthStatus: List<StrengthData> = listOf(
-        StrengthData(Channel.CHANNEL_A, 0, 0),
-        StrengthData(Channel.CHANNEL_B, 0, 0),
+    private var strengthStatus = ChannelStrengthLimit(
+        mapOf(Channel.CHANNEL_A to 0.toShort(), Channel.CHANNEL_B to 0.toShort()),
+        mapOf(Channel.CHANNEL_A to 0.toShort(), Channel.CHANNEL_B to 0.toShort()),
     )
 
     override val pulseProvider: PulseProvider = PulseProviderImpl(
@@ -229,7 +229,7 @@ object DgLabLocalClient : DgLabClient {
                 }
 
                 "msg" -> {
-                    payload.toStrengthDataList()?.let { strengthStatus = it }
+                    payload.toChannelStrengthLimit()?.let { strengthStatus = it }
                     payload.toFeedbackIndexCode()?.let(::handleFeedback)
                 }
 

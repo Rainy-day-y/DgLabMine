@@ -4,8 +4,8 @@ import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.Error
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.FeedbackIndex
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.StrengthSettingMode
+import cn.sweetberry.mcmod.dglab.websocket.common.data.ChannelStrengthLimit
 import cn.sweetberry.mcmod.dglab.websocket.common.data.PulseData
-import cn.sweetberry.mcmod.dglab.websocket.common.data.StrengthData
 import kotlinx.serialization.Serializable
 import java.util.*
 
@@ -13,7 +13,7 @@ import java.util.*
 data class Payload(
     val type: String, val clientId: String, val targetId: String, val message: String
 ) {
-    fun toStrengthDataList(): List<StrengthData>? {
+    fun toChannelStrengthLimit(): ChannelStrengthLimit? {
         val splitStrings = message.split("-")
 
         val commandType = splitStrings[0]
@@ -26,10 +26,10 @@ data class Payload(
         val aLimit = dataStrings[2].toShortOrNull() ?: 0
         val bLimit = dataStrings[3].toShortOrNull() ?: 0
 
-        return listOf(
-            StrengthData(Channel.CHANNEL_A, aStrength, aLimit),
-            StrengthData(Channel.CHANNEL_B, bStrength, bLimit)
-        )
+        val strengthMap = mapOf(Channel.CHANNEL_A to aStrength, Channel.CHANNEL_B to bStrength)
+        val limitMap = mapOf(Channel.CHANNEL_A to aLimit, Channel.CHANNEL_B to bLimit)
+
+        return ChannelStrengthLimit(strengthMap,limitMap)
     }
 
     fun toFeedbackIndexCode(): FeedbackIndex? {

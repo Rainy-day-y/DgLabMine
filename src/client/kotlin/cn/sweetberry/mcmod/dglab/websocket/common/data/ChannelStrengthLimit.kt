@@ -2,8 +2,7 @@ package cn.sweetberry.mcmod.dglab.websocket.common.data
 
 import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
 
-data class StrengthData (
-    val channel: Channel,
-    val strength: Short,
-    val limit: Short,
+data class ChannelStrengthLimit(
+    val strength: Map<Channel, Short>,
+    val limit: Map<Channel, Short>
 )
