@@ -10,7 +10,8 @@ sealed class DamageCondition: ConfigData {
     enum class Type {
         DAMAGE_RANGE,
         IS_SHIELD_BLOCKED,
-        IS_CANCELED
+        IS_CANCELED,
+        JEXL
     }
 
     abstract val type: Type

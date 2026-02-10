@@ -54,6 +54,9 @@ dependencies {
 
 	// Java Websocket for DGLAB socket server and client
 	implementation("org.java-websocket:Java-WebSocket:1.6.0")
+
+	// JEXL for rules
+	implementation("org.apache.commons:commons-jexl3:3.6.1")
 }
 
 processResources {

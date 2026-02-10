@@ -1,5 +1,6 @@
 package cn.sweetberry.mcmod.dglab.config.condition
 
+import cn.sweetberry.mcmod.dglab.config.condition.DamageCondition.Type.*
 import me.shedaniel.autoconfig.ConfigData
 import me.shedaniel.autoconfig.annotation.ConfigEntry
 
@@ -17,10 +18,14 @@ class ConditionWrapper: ConfigData {
     @ConfigEntry.Gui.CollapsibleObject
     var shieldBlocked: ShieldBlockedCondition = ShieldBlockedCondition()
 
+    @ConfigEntry.Gui.CollapsibleObject
+    var jexl: JexlCondition = JexlCondition()
+
     val condition: DamageCondition
         get() = when (type) {
-            DamageCondition.Type.DAMAGE_RANGE -> damageRange
-            DamageCondition.Type.IS_SHIELD_BLOCKED -> shieldBlocked
-            DamageCondition.Type.IS_CANCELED -> isCanceled
+            DAMAGE_RANGE -> damageRange
+            IS_SHIELD_BLOCKED -> shieldBlocked
+            IS_CANCELED -> isCanceled
+            JEXL -> jexl
         }
 }
