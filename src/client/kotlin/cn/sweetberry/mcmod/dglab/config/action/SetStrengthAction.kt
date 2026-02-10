@@ -6,12 +6,12 @@ import cn.sweetberry.mcmod.dglab.websocket.common.codes.StrengthSettingMode
 data class SetStrengthAction(
     var channel: Channel = Channel.CHANNEL_A,
     var mode: StrengthSettingMode = StrengthSettingMode.SET_TO,
-    var strength: Short = 0
+    var strength: Int = 0
 ) : Action() {
 
     override val type = Type.SET_STRENGTH
 
     override fun buildCommand(ctx: ActionContext): OutgoingCommand {
-        return OutgoingCommand.SetStrength(channel, mode, strength)
+        return OutgoingCommand.SetStrength(channel, mode, strength.toShort())
     }
 }
