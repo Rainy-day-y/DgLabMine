@@ -14,13 +14,13 @@ object DamageEventBus {
         if (isInitialized) return
         ClientPlayConnectionEvents.INIT.register { _, _ ->
             ClientPlayNetworking.registerReceiver(
-                DamageS2CPayload.ID,
+                DamageS2CPayload.PAYLOAD_ID,
                 { payload, _ -> post(payload.data) }
             )
         }
 
         ClientPlayConnectionEvents.DISCONNECT.register { _, _ ->
-            ClientPlayNetworking.unregisterReceiver(DamageS2CPayload.SUMMON_LIGHTNING_PAYLOAD_ID)
+            ClientPlayNetworking.unregisterReceiver(DamageS2CPayload.NAMESPACED_ID)
         }
         isInitialized = true
     }
