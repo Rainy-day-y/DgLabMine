@@ -4,6 +4,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry
 
 class ActionWrapper {
 
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     var type: Action.Type = Action.Type.SEND_PULSE
 
     @ConfigEntry.Gui.CollapsibleObject
