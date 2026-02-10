@@ -20,7 +20,7 @@ internal class RuleConfig: ConfigData {
     var actions = mutableListOf<ActionWrapper>()
 
     fun collectCommands(ctx: ActionContext): List<OutgoingCommand> {
-        if (!conditions.matches(ctx.damageData)) return emptyList()
+        if (!conditions.matches(ctx.damageData) || !enabled) return emptyList()
         return actions.mapNotNull { it.action.buildCommand(ctx) }
     }
 }
