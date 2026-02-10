@@ -2,6 +2,7 @@ package cn.sweetberry.mcmod.dglab.websocket.client
 
 import cn.sweetberry.mcmod.dglab.config.ModConfig
 import cn.sweetberry.mcmod.dglab.config.action.ActionContext
+import cn.sweetberry.mcmod.dglab.config.action.ActionRuntimeStore
 import cn.sweetberry.mcmod.dglab.config.action.OutgoingCommand
 import cn.sweetberry.mcmod.dglab.websocket.client.pulse.provider.PulseProvider
 import cn.sweetberry.mcmod.dglab.websocket.client.pulse.provider.PulseProviderImpl
@@ -111,6 +112,8 @@ object DgLabLocalClient : DgLabClient {
         }
     }
 
+    val actionRuntimeStore = ActionRuntimeStore()
+
     /**
      * 启动本地客户端
      *
@@ -170,13 +173,13 @@ object DgLabLocalClient : DgLabClient {
         if (!AutoConfig.getConfigHolder(ModConfig::class.java).getConfig().dgLabConfig.enabled) return
 
         val commands = AutoConfig.getConfigHolder(ModConfig::class.java).getConfig().dgLabConfig.rules
-            .flatMap { it.collectCommands(ActionContext(strengthStatus, data)) }
+            .flatMap { it.collectCommands(ActionContext(actionRuntimeStore, strengthStatus, data)) }
 
         debugLog(commands.toString())
         commands.forEach {
             when (it) {
                 is OutgoingCommand.SendPulse -> {
-                    play(it.pulseID,it.channel)
+                    play(it.pulseID, it.channel)
                 }
 
                 is OutgoingCommand.SetStrength -> {

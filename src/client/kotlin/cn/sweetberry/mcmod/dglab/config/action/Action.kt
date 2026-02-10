@@ -1,5 +1,7 @@
 package cn.sweetberry.mcmod.dglab.config.action
 
+import java.util.UUID
+
 
 sealed class Action {
 
@@ -8,6 +10,8 @@ sealed class Action {
         SET_STRENGTH,
         CLEAR_PULSE
     }
+
+    abstract val id: String
 
     abstract val type: Type
 

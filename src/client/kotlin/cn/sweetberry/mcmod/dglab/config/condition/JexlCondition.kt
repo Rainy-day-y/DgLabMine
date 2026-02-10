@@ -14,10 +14,10 @@ data class JexlCondition(
 
     override fun matches(data: DamageData): Boolean {
         val context = data.toJexlContext()
-        return try{
+        return try {
             JexlEngine.getExpression(expression).evaluate(context) as Boolean
-        }catch (e: Exception){
-            LoggerFactory.getLogger(this::class.java).warn("A Bad Condition: ${ e.message }")
+        } catch (e: Exception) {
+            LoggerFactory.getLogger(this::class.java).warn("A Bad Condition: ${e.message}")
             false
         }
     }
