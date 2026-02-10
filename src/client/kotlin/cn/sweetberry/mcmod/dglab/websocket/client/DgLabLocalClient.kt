@@ -315,7 +315,8 @@ class DgLabLocalClient : DgLabClient {
         // 停止当前播放任务
         stopPlayTask(channel)
 
-        // 直接发送波形数据，播放一次
+        val latch = java.util.concurrent.CountDownLatch(1)
+
         pulse.data?.let { pulseData ->
             val payload = Payload.sendPulse(
                 selfEndpoint!!.id,
@@ -324,7 +325,19 @@ class DgLabLocalClient : DgLabClient {
                 pulseData
             )
             send(payload)
-            debugLog("Playing pulse ${pulse.id} once on channel ${channel.letterCode}")
+
+            val waveformLength = pulseData.size()
+            val delayMs = (waveformLength * 100L) + 100L
+
+            // 调度一个延迟任务，播放完成后释放 latch
+            val task = scheduler.schedule({
+                latch.countDown()
+            }, delayMs, TimeUnit.MILLISECONDS)
+
+            playTasks[channel] = task
+
+            // 阻塞当前协程线程等待播放完成
+            latch.await()
         } ?: run {
             logger.warn("Pulse ${pulse.id} has no data (RemoteReference?)")
         }
