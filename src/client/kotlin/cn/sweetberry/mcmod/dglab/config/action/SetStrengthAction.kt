@@ -45,15 +45,18 @@ data class SetStrengthAction(
         val lastDelta = lastEffect?.firstOrNull { it.channel == channel }?.delta ?: 0
         jexlContext["lastDelta"] = lastDelta
 
-        val jexlResult = JexlEngine.getExpression(strengthJexl).evaluate(jexlContext)
-        logger.info("jexl result: {}", jexlResult)
-        val strength =
-            (JexlEngine.getExpression(strengthJexl).evaluate(jexlContext) as? Number)
+        val strength = try {
+            val jexlResult = JexlEngine.getExpression(strengthJexl).evaluate(jexlContext)
+            logger.info("jexl result: {}", jexlResult)
+            (jexlResult as? Number)
                 ?.toDouble()?.roundToInt()
                 ?.coerceIn(0, limit.toInt())
                 ?.toShort()
                 ?: 0
-
+        } catch (e: Exception) {
+            logger.warn("A Bad Strength JEXL: ${e.message}")
+            0
+        }
 
         // 记录本次对设备的影响
         val delta: Short = when (mode) {
