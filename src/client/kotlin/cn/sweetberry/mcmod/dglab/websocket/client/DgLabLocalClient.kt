@@ -31,7 +31,7 @@ class DgLabLocalClient : DgLabClient {
     // loggers
     val logger: Logger = LoggerFactory.getLogger(DgLabLocalClient::class.java)
     fun debugLog(msg: String) {
-        logger.info(msg)
+        logger.debug(msg)
     }
 
     // 本地 Endpoint，nullable，启动失败时可能为 null

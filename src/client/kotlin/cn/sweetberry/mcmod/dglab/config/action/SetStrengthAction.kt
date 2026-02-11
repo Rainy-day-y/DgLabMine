@@ -24,7 +24,6 @@ data class SetStrengthAction(
 
     override fun buildCommand(ctx: ActionContext): OutgoingCommand {
         val logger = LoggerFactory.getLogger(javaClass)
-        logger.info("---SetStrengthAction start: JEXL: $strengthJexl, id: $id---")
         val jexlContext = ctx.damageData.toJexlContext()
         val limit = when (mode) {
             StrengthSettingMode.SET_TO -> ctx.strengthStatus.limit[channel] ?: 0
@@ -35,7 +34,6 @@ data class SetStrengthAction(
 
         // 上次执行的效果
         val lastEffect = runtime.getLastEffect(id)
-        logger.info("lastEffect: $lastEffect")
 
         // 暴露给 JEXL
         val lastDelta = lastEffect?.firstOrNull { it.channel == channel }?.delta ?: 0
@@ -43,7 +41,6 @@ data class SetStrengthAction(
 
         val strength = try {
             val jexlResult = JexlEngine.getExpression(strengthJexl).evaluate(jexlContext)
-            logger.info("jexl result: {}", jexlResult)
             (jexlResult as? Number)
                 ?.toDouble()?.roundToInt()
                 ?.coerceIn(0, limit.toInt())
@@ -53,7 +50,6 @@ data class SetStrengthAction(
             logger.warn("A Bad Strength JEXL: ${e.message}")
             0
         }
-        logger.info("strength: $strength")
 
         // 记录本次对设备的影响
         val delta: Short = when (mode) {
@@ -68,8 +64,6 @@ data class SetStrengthAction(
             strengthJexl = strengthJexl
         )
         runtime.updateLastEffect(id, listOf(effect))
-        logger.info("this effect: {}", effect)
-        logger.info("----END----")
         return OutgoingCommand.SetStrength(channel, mode, strength)
     }
 }
