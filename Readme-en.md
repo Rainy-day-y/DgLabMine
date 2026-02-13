@@ -69,8 +69,9 @@ This mod uses **Cloth Config** for configuration. Access mod settings as follows
 
 1. Launch Minecraft
 2. Enter a world
-3. Press the O key to open settings
+3. Press the “O” key to open settings
 4. Adjust settings as needed (customize behavior using JEXL rules)
+5. Press the “I” key to open the QR code and use the DgLab app WebSocket scanner to connect~
 
 ## Dependencies
 
