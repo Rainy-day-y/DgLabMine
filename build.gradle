@@ -18,8 +18,8 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
-    maven { url "https://maven.shedaniel.me/" }
-    maven { url "https://jitpack.io" }
+    maven { url = "https://maven.shedaniel.me/" }
+    maven { url = "https://jitpack.io" }
 }
 
 loom {
@@ -51,6 +51,10 @@ dependencies {
 
     // Vital Signals for damage detail
     modImplementation("com.github.Rainy-day-y:Vital-Signals:${project.vital_signals_version}")
+
+    // DGLAB Websocket server
+    implementation("com.github.Rainy-day-y:DgLab-Websocket-Server:1.0.0")
+    include("com.github.Rainy-day-y:DgLab-Websocket-Server:1.0.0")
 
     // Java Websocket for DGLAB socket server and client
     implementation("org.java-websocket:Java-WebSocket:1.6.0")

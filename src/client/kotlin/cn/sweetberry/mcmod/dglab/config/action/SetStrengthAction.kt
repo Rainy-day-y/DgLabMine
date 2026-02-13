@@ -2,8 +2,8 @@ package cn.sweetberry.mcmod.dglab.config.action
 
 import cn.sweetberry.mcmod.dglab.jexl.JexlEngine
 import cn.sweetberry.mcmod.dglab.jexl.toJexlContext
-import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
-import cn.sweetberry.mcmod.dglab.websocket.common.codes.StrengthSettingMode
+import cn.sweetberry.codes.dglab.websocket.common.codes.Channel
+import cn.sweetberry.codes.dglab.websocket.common.codes.StrengthSettingMode
 import me.shedaniel.autoconfig.annotation.ConfigEntry
 import org.slf4j.LoggerFactory
 import java.util.*

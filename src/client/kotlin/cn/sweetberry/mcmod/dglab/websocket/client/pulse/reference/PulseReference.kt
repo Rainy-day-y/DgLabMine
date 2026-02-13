@@ -1,6 +1,6 @@
 package cn.sweetberry.mcmod.dglab.websocket.client.pulse.reference
 
-import cn.sweetberry.mcmod.dglab.websocket.common.data.PulseData
+import cn.sweetberry.codes.dglab.websocket.common.data.PulseData
 
 // 不管是完整波形还是仅 ID，这个接口都能表示它
 interface PulseReference {

@@ -1,7 +1,7 @@
 package cn.sweetberry.mcmod.dglab.config.action
 
-import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
-import cn.sweetberry.mcmod.dglab.websocket.common.codes.StrengthSettingMode
+import cn.sweetberry.codes.dglab.websocket.common.codes.Channel
+import cn.sweetberry.codes.dglab.websocket.common.codes.StrengthSettingMode
 
 sealed class OutgoingCommand {
     data class SendPulse(

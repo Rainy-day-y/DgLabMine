@@ -4,7 +4,7 @@ import cn.sweetberry.mcmod.dglab.config.ModConfig
 import cn.sweetberry.mcmod.dglab.config.ServerConfig.ServerType
 import cn.sweetberry.mcmod.dglab.events.damage.DamageEventBus
 import cn.sweetberry.mcmod.dglab.websocket.client.DgLabClientService
-import cn.sweetberry.mcmod.dglab.websocket.server.DgLabSocketService
+import cn.sweetberry.codes.dglab.websocket.server.DgLabSocketService
 import me.shedaniel.autoconfig.AutoConfig
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer
 import net.fabricmc.api.ClientModInitializer

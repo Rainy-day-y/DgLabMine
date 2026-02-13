@@ -1,6 +1,6 @@
 package cn.sweetberry.mcmod.dglab.config.action
 
-import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
+import cn.sweetberry.codes.dglab.websocket.common.codes.Channel
 import me.shedaniel.autoconfig.annotation.ConfigEntry
 import java.util.UUID
 

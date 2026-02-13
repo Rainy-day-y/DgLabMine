@@ -2,7 +2,7 @@ package cn.sweetberry.mcmod.dglab.websocket.client
 
 import cn.sweetberry.mcmod.dglab.websocket.client.pulse.provider.PulseProvider
 import cn.sweetberry.mcmod.dglab.websocket.client.pulse.reference.PulseReference
-import cn.sweetberry.mcmod.dglab.websocket.common.codes.Channel
+import cn.sweetberry.codes.dglab.websocket.common.codes.Channel
 import cn.sweetberry.mcmod.vitalsignals.network.damage.DamageData
 
 class DgLabGameHubClient: DgLabClient {
