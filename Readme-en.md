@@ -2,7 +2,7 @@
 
 [ English | [简体中文](Readme.md) ]
 
-A Minecraft mod developed for **DgLab Coyote** - Integrating electrostimulation devices into your Minecraft gameplay.
+A Minecraft mod developed for **DgLab Coyote** – Integrating electrostimulation devices into your Minecraft gameplay.
 
 ## Project Overview
 
@@ -35,9 +35,7 @@ A Minecraft mod developed for **DgLab Coyote** - Integrating electrostimulation 
 
 Ensure you have [Vital Signals](https://github.com/Rainy-day-y/Vital-Signals) installed. Download it from [Releases](https://github.com/Rainy-day-y/Vital-Signals/releases).
 
-#### Download from Modrinth
-
-Visit this project's Modrinth homepage, or use your preferred launcher to install from Modrinth.
+You can also find it on Modrinth by searching for "Vital Signals."
 
 #### Download from Releases
 

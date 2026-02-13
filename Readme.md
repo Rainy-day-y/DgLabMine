@@ -34,11 +34,7 @@
 
 ### 安装步骤
 
-请确保你安装了[Vital Signals](https://github.com/Rainy-day-y/Vital-Signals)，可以从[Release](https://github.com/Rainy-day-y/Vital-Signals/releases)下载安装它
-
-#### 从Modrinth下载
-
-访问本项目的Modrinth主页，或使用你喜欢的启动器从Modrinth安装
+请确保你安装了[Vital Signals](https://github.com/Rainy-day-y/Vital-Signals)，可以从[Release](https://github.com/Rainy-day-y/Vital-Signals/releases)下载安装它，或通过Modrinth搜索下载
 
 #### 从Release下载
 
