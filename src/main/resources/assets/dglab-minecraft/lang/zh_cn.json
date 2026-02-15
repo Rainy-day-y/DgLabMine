@@ -41,7 +41,35 @@
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.strengthJexl": "设置值(JEXL)",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse": "清空波形设置",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "目标通道",
+
+
   "key.category.dglab-minecraft.key_category":  "DgLabMine按键",
   "key.dglab-minecraft.open_config": "打开设置",
-  "key.dglab-minecraft.open_qr": "打开连接二维码"
+  "key.dglab-minecraft.open_connection": "打开连接管理",
+
+
+  "gui.dglab-minecraft.connection.title": "DgLab连接管理",
+  "gui.dglab-minecraft.connection.config_panel": "服务器配置",
+  "gui.dglab-minecraft.connection.server_type_format": "类型: %s",
+  "gui.dglab-minecraft.connection.server_address": "服务器地址",
+  "gui.dglab-minecraft.connection.server_port": "服务器端口",
+  "gui.dglab-minecraft.connection.current_config": "当前配置(运行中)",
+  "gui.dglab-minecraft.connection.preview_config": "新配置预览(未生效)",
+  "gui.dglab-minecraft.connection.running": "● 运行中",
+  "gui.dglab-minecraft.connection.stopped": "● 已停止",
+  "gui.dglab-minecraft.connection.not_applied": "⚠ 需应用后生效",
+  "gui.dglab-minecraft.connection.applied": "✓ 已生效",
+  "gui.dglab-minecraft.connection.apply_restart": "应用配置并重启",
+  "gui.dglab-minecraft.connection.applying": "正在应用...",
+  "gui.dglab-minecraft.connection.apply_success": "配置已应用，服务已重启",
+  "gui.dglab-minecraft.connection.apply_failed": "配置应用失败，请检查设置",
+  "gui.dglab-minecraft.connection.close": "关闭",
+  "gui.dglab-minecraft.connection.warning.line1": "⚠ 此模式正在开发中",
+  "gui.dglab-minecraft.connection.warning.line2": "请使用 LOCAL 模式",
+  "gui.dglab-minecraft.connection.mask.not_applied": "⚠ 未生效",
+  "gui.dglab-minecraft.connection.mask.click_apply": "点击应用",
+  "gui.dglab-minecraft.connection.label.type": "类型",
+  "gui.dglab-minecraft.connection.label.address": "服务器地址",
+  "gui.dglab-minecraft.connection.label.port": "服务器端口",
+  "gui.dglab-minecraft.connection.port_invalid": "⚠ 端口必须在 1-65535 之间"
 }

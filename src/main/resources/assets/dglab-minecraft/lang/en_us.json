@@ -41,7 +41,35 @@
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.setStrength.strengthJexl": "Strength(JEXL)",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse": "Clear Pulse Action Setting",
   "text.autoconfig.dglab-minecraft.option.ActionWrapper.clearPulse.channel": "Channel",
+
+
   "key.category.dglab-minecraft.key_category":  "DgLabMine",
   "key.dglab-minecraft.open_config": "Open config",
-  "key.dglab-minecraft.open_qr": "Open QRCode"
+  "key.dglab-minecraft.open_connection": "Open Connection Manager",
+
+
+  "gui.dglab-minecraft.connection.title": "DgLab Connection Manager",
+  "gui.dglab-minecraft.connection.config_panel": "Server Config",
+  "gui.dglab-minecraft.connection.server_type_format": "Type: %s",
+  "gui.dglab-minecraft.connection.server_address": "Server Address",
+  "gui.dglab-minecraft.connection.server_port": "Server Port",
+  "gui.dglab-minecraft.connection.current_config": "Current (Running)",
+  "gui.dglab-minecraft.connection.preview_config": "Preview (Not Applied)",
+  "gui.dglab-minecraft.connection.running": "● Running",
+  "gui.dglab-minecraft.connection.stopped": "● Stopped",
+  "gui.dglab-minecraft.connection.not_applied": "⚠ Apply to enable",
+  "gui.dglab-minecraft.connection.applied": "✓ Applied",
+  "gui.dglab-minecraft.connection.apply_restart": "Apply & Restart",
+  "gui.dglab-minecraft.connection.applying": "Applying...",
+  "gui.dglab-minecraft.connection.apply_success": "Config applied, service restarted",
+  "gui.dglab-minecraft.connection.apply_failed": "Failed to apply config",
+  "gui.dglab-minecraft.connection.close": "Close",
+  "gui.dglab-minecraft.connection.warning.line1": "This mode is under development",
+  "gui.dglab-minecraft.connection.warning.line2": "Please use LOCAL mode",
+  "gui.dglab-minecraft.connection.mask.not_applied": "⚠ Not Applied",
+  "gui.dglab-minecraft.connection.mask.click_apply": "Click Apply",
+  "gui.dglab-minecraft.connection.label.type": "Type",
+  "gui.dglab-minecraft.connection.label.address": "Server Address",
+  "gui.dglab-minecraft.connection.label.port": "Server Port",
+  "gui.dglab-minecraft.connection.port_invalid": "Must be between 1-65535"
 }
