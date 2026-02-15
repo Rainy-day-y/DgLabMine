@@ -101,9 +101,21 @@ class DgLabLocalClient : DgLabClient {
     // 每个通道的播放任务
     private val playTasks = ConcurrentHashMap<Channel, ScheduledFuture<*>>()
 
+    // 最后一次收到心跳的时间
+    private var lastHeartbeatTime: Long = 0L
+
+    // 心跳超时检测任务
+    private var heartbeatCheckTask: ScheduledFuture<*>? = null
+
     companion object {
         // 基础播放间隔（毫秒）
         private const val BASE_INTERVAL_MS = 100L
+
+        // 心跳超时时间（毫秒）- 90秒
+        private const val HEARTBEAT_TIMEOUT_MS = 90000L
+
+        // 心跳检测间隔（毫秒）- 30秒
+        private const val HEARTBEAT_CHECK_INTERVAL_MS = 30000L
     }
 
     init {
@@ -138,6 +150,11 @@ class DgLabLocalClient : DgLabClient {
             selfEndpoint = endpoint
             selfEndpoint?.let { logger.info("starting local client,UUID: ${it.id}") }
             running = true
+
+            // 初始化心跳时间并启动超时检测
+            lastHeartbeatTime = System.currentTimeMillis()
+            startHeartbeatCheck()
+
             return true
         }
     }
@@ -151,10 +168,38 @@ class DgLabLocalClient : DgLabClient {
     }
 
     /**
+     * 启动心跳超时检测任务
+     */
+    private fun startHeartbeatCheck() {
+        heartbeatCheckTask?.cancel(false)
+        heartbeatCheckTask = scheduler.scheduleAtFixedRate({
+            if (!running) return@scheduleAtFixedRate
+
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastHeartbeatTime > HEARTBEAT_TIMEOUT_MS) {
+                logger.warn("Heartbeat timeout detected, connection may be lost")
+                // 可以选择在这里自动重连
+                // restartConnection()
+            }
+        }, HEARTBEAT_CHECK_INTERVAL_MS, HEARTBEAT_CHECK_INTERVAL_MS, TimeUnit.MILLISECONDS)
+    }
+
+    /**
+     * 停止心跳超时检测任务
+     */
+    private fun stopHeartbeatCheck() {
+        heartbeatCheckTask?.cancel(false)
+        heartbeatCheckTask = null
+    }
+
+    /**
      * 停止客户端
      */
     override fun stop() {
         synchronized(lock) {
+            // 停止心跳检测任务
+            stopHeartbeatCheck()
+
             // 停止所有播放任务
             Channel.entries.forEach { channel ->
                 stopPlayTask(channel)
@@ -249,6 +294,11 @@ class DgLabLocalClient : DgLabClient {
                     logger.info("Connect closed, restarting, message: $payload")
                     stop()
                     start()
+                }
+
+                "heartbeat" -> {
+                    lastHeartbeatTime = System.currentTimeMillis()
+                    debugLog("Heartbeat received from server")
                 }
 
                 "error" -> logger.error("receive error message: $payload")
