@@ -6,6 +6,7 @@ import cn.sweetberry.mcmod.dglab.events.damage.DamageEventBus
 import cn.sweetberry.mcmod.dglab.websocket.client.DgLabClientService
 import cn.sweetberry.codes.dglab.websocket.server.DgLabSocketService
 import me.shedaniel.autoconfig.AutoConfig
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer
 import net.fabricmc.api.ClientModInitializer
 import org.slf4j.Logger
@@ -21,7 +22,10 @@ object DgLabMineClient : ClientModInitializer {
     override fun onInitializeClient() {
         DamageEventBus.initialize()
         DgLabMineKeyBindings.register()
-        AutoConfig.register(ModConfig::class.java, ::Toml4jConfigSerializer)
+        AutoConfig.register(
+            ModConfig::class.java,
+            PartitioningSerializer.wrap(::Toml4jConfigSerializer)
+        )
 
         val serverConfig = AutoConfig.getConfigHolder(ModConfig::class.java).getConfig().serverConfig
         when (serverConfig.serverType) {
